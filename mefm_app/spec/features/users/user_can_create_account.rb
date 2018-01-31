@@ -56,8 +56,7 @@ feature "user can sign up when filling form out correctly" do
     fill_in "user_password", with: "password"
     fill_in "Password Confirmation", with: "password"
     click_button "Sign up"
-    click_link("Logout")
 
-    expect(page).to_not have_content("Logout")
+    expect(page).to have_content("Logout")
   end
 end
