@@ -15,7 +15,5 @@ feature "user can view all physicans" do
     expect(page).to have_content(physician1.last_name)
     expect(page).to have_content("Grossman")
     expect(page).to have_content("Matt")
-
-
   end
 end
