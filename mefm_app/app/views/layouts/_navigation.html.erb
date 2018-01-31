@@ -1,0 +1,21 @@
+<div class="nav-bar">
+  <div class="auth-links">
+    <%= link_to 'Physician Reviews Home', '/' %> |
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'Admin Tools', users_path %> |
+      <% end %>
+    <%= link_to 'Edit account', edit_user_registration_path %> |
+    <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %> |
+    <%= link_to "Submit a new Physician", new_physician_path %> |
+    <%= link_to "Review a Physician", physicians_path %>
+    <% else %>
+      <%= link_to 'Sign in', new_user_session_path %> |
+      <%= link_to 'Sign up', new_user_registration_path %> |
+    <% end %>
+    <%= form_tag(physicians_path, :method => "get", id: "search", style: 'display:inline') do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
+</div>
