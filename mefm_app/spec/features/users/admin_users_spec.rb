@@ -3,9 +3,10 @@ require 'rails_helper'
 feature "What an admin can do" do
   let(:user1) {FactoryBot.create(:user, role: "member")}
   let(:user2) {FactoryBot.create(:user, role: "admin")}
-  let(:physician1) {FactoryBot.create(:physician)}
-  let(:physician_review1) {FactoryBot.create(:physician_review)}
-
+  let(:user3) {FactoryBot.create(:user, role: "admin",id: 1)}
+  let!(:physician1) {FactoryBot.create(:physician)}
+  let!(:physician_review1) {FactoryBot.create(:physician_review, review: "GREAT!", user_id: 1)}
+  let!(:physician_review2) {FactoryBot.create(:physician_review, review: "AWESOME!", user_id: 2,id: 2)}
 
   scenario "a non-admin user can sucessfully become an admin user" do
 
@@ -15,7 +16,7 @@ feature "What an admin can do" do
     expect(user1.role).not_to be == ('member')
   end
 
-  scenario "admin can edit a physican's review" do
+  scenario "admin can edit any physican's review" do
 
     sign_in user2
     visit physicians_path
@@ -31,7 +32,7 @@ feature "What an admin can do" do
   end
 
 
-  scenario "non-admin can not edit or delete a physican's review" do
+  scenario "non-admin can not edit or delete someone else's review" do
 
     sign_in user1
     visit physicians_path
@@ -40,4 +41,15 @@ feature "What an admin can do" do
     expect(page).to_not have_content('Edit Review')
     expect(page).to_not have_content('Delete Review')
   end
+
+  # scenario "non-admin can edit their own review" do
+  #   sign_in user1 #user_id of 1
+  #   binding.pry
+  #   visit physicians_path
+  #   click_link("John Smith")
+  #   physician1.physician_reviews[0]
+  #   review = physician_review1 #user_id of 1
+  #
+  #   expect(page).to have_content('Edit Review')
+  # end
 end
