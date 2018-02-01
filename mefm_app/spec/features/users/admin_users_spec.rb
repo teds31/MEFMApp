@@ -9,15 +9,13 @@ feature "What an admin can do" do
   let!(:physician_review2) {FactoryBot.create(:physician_review, review: "AWESOME!", user_id: 2,id: 2)}
 
   scenario "a non-admin user can sucessfully become an admin user" do
-
     user1.update_attributes(:role => 'admin')
 
     expect(user1.role).to be == ('admin')
     expect(user1.role).not_to be == ('member')
   end
 
-  scenario "admin can edit any physican's review" do
-
+  scenario "an admin can edit any physican's review" do
     sign_in user2
     visit physicians_path
     click_link("John Smith")
@@ -27,29 +25,35 @@ feature "What an admin can do" do
     click_button "Submit Changes"
 
     expect(page).to have_content("Review Succesfully Updated")
+    expect(page).to have_content("He was the worst doctor!")
     expect(page).to have_content('Edit Review')
     expect(page).to have_content('Delete Review')
   end
 
 
   scenario "non-admin can not edit or delete someone else's review" do
-
     sign_in user1
-    visit physicians_path
-    click_link("John Smith")
-
-    expect(page).to_not have_content('Edit Review')
-    expect(page).to_not have_content('Delete Review')
+    visit '/physicians/1'
+    physician1.physician_reviews.each do |review|
+      if review.user_id != user1.id
+        expect(page).to_not have_content('Edit Review')
+        expect(page).to_not have_content('Delete Review')
+      else
+        expect(page).to have_content('Edit Review')
+        expect(page).to have_content('Delete Review')
+      end
+    end
   end
 
-  # scenario "non-admin can edit their own review" do
-  #   sign_in user1 #user_id of 1
-  #   binding.pry
-  #   visit physicians_path
-  #   click_link("John Smith")
-  #   physician1.physician_reviews[0]
-  #   review = physician_review1 #user_id of 1
-  #
-  #   expect(page).to have_content('Edit Review')
-  # end
+  scenario "non-admin can edit their own review" do
+    sign_in user1 #user_id of 1
+    visit '/physicians/1'
+    physician1.physician_reviews.each do |review|
+      if review.user_id == user1.id
+        expect(page).to have_content('Edit Review')
+      else
+        expect(page).to_not have_content('Edit Review')
+      end
+    end
+  end
 end
