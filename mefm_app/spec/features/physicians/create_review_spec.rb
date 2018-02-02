@@ -46,6 +46,6 @@ feature 'user leaves a review for the physician' do
     fill_in
     click_button("Submit")
 
-    expect(page).to have_content("Failed to save review.")
+    expect(page).to have_content("Failed to save review. Check all fields")
   end
 end
