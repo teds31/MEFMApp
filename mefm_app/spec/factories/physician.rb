@@ -1,10 +1,8 @@
 FactoryBot.define do
   factory :physician do
-    first_name "John"
-    last_name "Smith"
+    sequence(:first_name) {|n| "Matt #{n}" }
+    sequence(:last_name) {|n| "Grossman #{n}" }
     review_date "November 10"
-    id 1
-
-
+    sequence(:id) {|n| "1#{n + 1}" }
   end
 end
