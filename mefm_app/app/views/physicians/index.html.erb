@@ -6,3 +6,13 @@
 <%= link_to "Sign up", new_user_registration_path %><br>
 
 <%= link_to "Log in", user_session_path %>
+
+<tbody>
+  <% @physicians.each do |list| %>
+  <tr>
+    <td><%= list.first_name %></td>
+    <td><%= list.last_name %></td>
+  </tr>
+<% end %>
+</br>
+</tbody>
