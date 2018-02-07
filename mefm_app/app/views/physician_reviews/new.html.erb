@@ -1,0 +1,10 @@
+
+  <%= form_for @physicians_review do |f| %>
+  <ul>
+    <li><%= f.label :rating, "Rating: " %> <%= f.select :rating,[0,1,2,3,4,5,6,7,8,9,10]  %></li>
+    <li><%= f.label :review, "Review:"%> <%= f.text_box :review %> </li> f.label :street_address,'Street Address: ' %>  <%= f.text_field :street_address %></li>
+    <li><%= f.hidden_field :user_id, value: current_user.id %></li>
+  </ul>
+
+    <%= f.submit "Create" %>
+  <% end %>

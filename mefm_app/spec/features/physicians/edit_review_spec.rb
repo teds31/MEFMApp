@@ -21,7 +21,6 @@ feature "authenticated user edits own review" do
     sign_in user
     visit physicians_path
     click_link physician1.first_name
-
     expect(page).to have_content("Edit Review")
   end
 
