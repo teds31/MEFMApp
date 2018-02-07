@@ -7,12 +7,12 @@
 
 <%= link_to "Log in", user_session_path %>
 
-<tbody>
-  <% @physicians.each do |list| %>
-  <tr>
-    <td><%= list.first_name %></td>
-    <td><%= list.last_name %></td>
-  </tr>
+<body>
+  <% @physicians.each do |physician| %>
+  <ul>
+      <li><%= link_to "#{physician.first_name}", physician %></li>
+  <ul>
+
 <% end %>
 </br>
-</tbody>
+</body>
