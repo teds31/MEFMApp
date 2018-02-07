@@ -1,0 +1,3 @@
+<% if physician.physician_review.user == current_user || current_user.role == "admin" %>
+  <%= link_to "Edit Review", edit_physician_physician_review_path %>
+<% end %>
