@@ -1,18 +1,19 @@
 
-<h1>Physicians</h1>
-
-<p>Sign up or log in to create a physician review</p>
-
-<%= link_to "Sign up", new_user_registration_path %><br>
-
-<%= link_to "Log in", user_session_path %>
-
 <body>
-  <% @physicians.each do |physician| %>
-  <ul>
-      <li><%= link_to "#{physician.first_name}", physician %></li>
-  <ul>
-
-<% end %>
-</br>
+  <div class="jumbotron">
+    <h1 class="display-3">Physicians</h1>
+    <p class="lead">Log in or sign up to create a Physician Review.</p>
+    <hr class="my-4">
+    <p>
+      <% @physicians.each do |physician| %>
+      <ul>
+        <li><%= link_to "#{physician.first_name}", physician %></li>
+      </ul>
+      <% end %>
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/users/sign_in" role="button">Log in</a>
+      <a class="btn btn-primary btn-lg" href="/users/sign_up" role="button">Sign up</a>
+    </p>
+  </div>
 </body>
