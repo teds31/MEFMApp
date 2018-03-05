@@ -10,17 +10,21 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Find A Provider</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign In</a>
-      </li>
-      <%= if current_user? %>
+      <% if !user_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Account</a>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-link' %>
         </li>
-        <%= end %>
+        <li class"nav-item">
+          <%= link_to 'Sign In',  new_user_session_path, :class => 'nav-link'  %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Account', edit_user_registration_path, :class => 'nav-link' %>
+        </li>
+        <li class"nav-item">
+          <%= link_to 'Log Off',  destroy_user_session_path, :class => 'nav-link'  %>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
       </li>
@@ -29,4 +33,5 @@
       </li>
     </ul>
   </div>
+
 </nav>
