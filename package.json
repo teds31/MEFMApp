@@ -1,0 +1,12 @@
+{
+  "name": "mefm_app",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.3.0",
+    "bootstrap": "^4.0.0",
+    "bootswatch": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.0"
+  }
+}
