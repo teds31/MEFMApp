@@ -4,9 +4,9 @@ class PhysiciansController < ApplicationController
   def index
     @physicians = Physician.all
     if params[:search]
-      @physicians = Physician.search(params[:search]).order(name: :desc)
+      @physicians = Physician.search(params[:search]).order("created_at DESC")
     else
-      @physicians = Physician.all
+      @physicians = Physician.all.order('created_at DESC')
     end
   end
 

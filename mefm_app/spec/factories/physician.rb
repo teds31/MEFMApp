@@ -4,5 +4,6 @@ FactoryBot.define do
     sequence(:last_name) {|n| "Grossman #{n}" }
     review_date "November 10"
     sequence(:id) {|n| "1#{n + 1}" }
+    postal_code "01234"
   end
 end

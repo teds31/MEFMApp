@@ -7,6 +7,7 @@ class Physician < ApplicationRecord
   validates :last_name, presence: true, allow_blank: false
 
   def self.search(search)
-    where('name ILIKE ?', "%#{search}%")
+    where("postal_code like ?", "%#{search}%")
   end
+
 end
