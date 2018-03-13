@@ -1,0 +1,78 @@
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (153.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mefm_app_test"[0m
+  [1m[35m (353.3ms)[0m  [1m[35mCREATE DATABASE "mefm_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "physician_reviews" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "physician_reviews" ("id" bigserial primary key, "rating" integer NOT NULL, "physician_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "review" text)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_physician_reviews_on_physician_id" ON "physician_reviews"  ("physician_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_physician_reviews_on_user_id" ON "physician_reviews"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "physicians" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "physicians" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "review_date" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "postal_code" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "role" character varying DEFAULT 'member' NOT NULL, "provider" character varying, "uid" character varying)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180313225227)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180129152312),
+(20180129152427),
+(20180129165028),
+(20180129135318),
+(20180130235748),
+(20180201032802),
+(20180220171210);
+
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-03-13 22:57:33.711096"], ["updated_at", "2018-03-13 22:57:33.711096"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 12], ["first_name", "Matt 1"], ["last_name", "Grossman 1"], ["review_date", "November 10"], ["created_at", "2018-03-13 22:57:33.811768"], ["updated_at", "2018-03-13 22:57:33.811768"], ["postal_code", "01234"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 13], ["first_name", "Matt 2"], ["last_name", "Grossman 2"], ["review_date", "November 10"], ["created_at", "2018-03-13 22:57:33.815507"], ["updated_at", "2018-03-13 22:57:33.815507"], ["postal_code", "12345"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 14], ["first_name", "Matt"], ["last_name", "Grossman 3"], ["review_date", "November 10"], ["created_at", "2018-03-13 22:57:33.817929"], ["updated_at", "2018-03-13 22:57:33.817929"], ["postal_code", "01234"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "factorybot@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 1], ["first_name", "Robert"], ["last_name", "Jacobs"], ["email", "factorybot@yahoo.com"], ["encrypted_password", "$2a$04$4M6EjeDSc1XTlr7Dalsx0OGJdQTs8HaHFrG83MoMx4gM2ePP8/lbi"], ["created_at", "2018-03-13 22:57:33.862760"], ["updated_at", "2018-03-13 22:57:33.862760"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/physicians" for 127.0.0.1 at 2018-03-13 18:57:33 -0400
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-03-13 22:57:33.879885"], ["last_sign_in_at", "2018-03-13 22:57:33.879885"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-03-13 22:57:33.881116"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PhysiciansController#index as HTML
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (1.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" ORDER BY created_at DESC[0m
+  Rendered physicians/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_top_navigation.html.erb (1.1ms)
+  Rendered layouts/_bottom_navigation.html.erb (0.8ms)
+Completed 200 OK in 12004ms (Views: 11997.1ms | ActiveRecord: 1.1ms)
+Started GET "/physicians?utf8=%E2%9C%93&search=01234" for 127.0.0.1 at 2018-03-13 18:57:45 -0400
+Processing by PhysiciansController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"01234"}
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.8ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE (postal_code like '%01234%') ORDER BY created_at DESC[0m
+  Rendered physicians/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_top_navigation.html.erb (3.2ms)
+  Rendered layouts/_bottom_navigation.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
