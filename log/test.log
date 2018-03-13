@@ -76,3 +76,40 @@ Processing by PhysiciansController#index as HTML
   Rendered layouts/_bottom_navigation.html.erb (0.1ms)
 Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.8ms)
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 12], ["first_name", "Matt 1"], ["last_name", "Grossman 1"], ["review_date", "November 10"], ["created_at", "2018-03-13 23:03:33.814349"], ["updated_at", "2018-03-13 23:03:33.814349"], ["postal_code", "01234"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 13], ["first_name", "Matt 2"], ["last_name", "Grossman 2"], ["review_date", "November 10"], ["created_at", "2018-03-13 23:03:33.817692"], ["updated_at", "2018-03-13 23:03:33.817692"], ["postal_code", "12345"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "physicians" ("id", "first_name", "last_name", "review_date", "created_at", "updated_at", "postal_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 14], ["first_name", "Matt"], ["last_name", "Grossman 3"], ["review_date", "November 10"], ["created_at", "2018-03-13 23:03:33.820351"], ["updated_at", "2018-03-13 23:03:33.820351"], ["postal_code", "01234"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "factorybot@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 1], ["first_name", "Robert"], ["last_name", "Jacobs"], ["email", "factorybot@yahoo.com"], ["encrypted_password", "$2a$04$fGPYTc2cuQ4k/rqeLGL8QuFvIDpUH2zszyHmGH2LEm0bhDAX14C62"], ["created_at", "2018-03-13 23:03:33.863666"], ["updated_at", "2018-03-13 23:03:33.863666"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/physicians" for 127.0.0.1 at 2018-03-13 19:03:33 -0400
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-03-13 23:03:33.876833"], ["last_sign_in_at", "2018-03-13 23:03:33.876833"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-03-13 23:03:33.877885"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PhysiciansController#index as HTML
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (1.0ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" ORDER BY created_at DESC[0m
+  Rendered physicians/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_top_navigation.html.erb (1.0ms)
+  Rendered layouts/_bottom_navigation.html.erb (0.6ms)
+Completed 200 OK in 1502ms (Views: 1496.9ms | ActiveRecord: 1.0ms)
+Started GET "/physicians?utf8=%E2%9C%93&search=01234" for 127.0.0.1 at 2018-03-13 19:03:35 -0400
+Processing by PhysiciansController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"01234"}
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.7ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE (postal_code like '%01234%') ORDER BY created_at DESC[0m
+  Rendered physicians/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_top_navigation.html.erb (2.8ms)
+  Rendered layouts/_bottom_navigation.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
