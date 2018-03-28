@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:300,400,500,700,900');
+
+body,h1,h2,h3,h4,h5,h6,span,a,p{
+  font-family: 'Roboto', arial, sans-serif;
+}
+
+/* header */
+.navbar{background-color: #fff;padding: 1em;}
+.navbar-expand-lg .navbar-collapse{height: 40px;}
+
+.search-box .form-control{height: calc(2.5rem + 2px);background-color: transparent;}
+.navbar-expand-lg .navbar-nav .nav-item .nav-link{color: #000;font-size: 14px;font-weight: 400;padding: .9em;position: relative;}
+.navbar-expand-lg .navbar-nav .nav-item.active .nav-link,.navbar-expand-lg .navbar-nav .nav-item:hover .nav-link{color: #1BA590;}
+.navbar-expand-lg .navbar-nav .nav-item.active .nav-link:after,.navbar-expand-lg .navbar-nav .nav-item:hover .nav-link:after{content: "";background-color: #1BA590;width: 5px;height: 5px;border-radius: 50%;position: absolute;bottom: 0;top: 30px;left: 0;right: 0;margin: auto;}
+
+
+/* banner */
+.banner{background:url('/assets/banner-bg.jpg');background-size: cover;height: 700px;background-position: center;}
+.banner-text{padding-top: 100px;}
+.banner-text img{width: 160px;}
+.banner-text h1{font-size: 49px;font-weight: 700;font-family: 'Bitter',arial, serif;color: #fff;line-height: 40px;margin: 0;}
+.banner-text h1 span{color: #1BA590;}
+.banner-text p{font-size: 18px;font-weight: 500;color: #fff;margin:25px 0 50px 0;}
+
+.banner-text .banner-search span{color: #fff;font-size: 25px;font-weight: 500;font-family: 'Roboto', arial, sans-serif; }
+.banner-text .banner-search form{width: 60%;margin: auto;}
+.banner-text .banner-search form input{width: 100%;border-radius: 5px;padding: 15px 20px;margin: 15px 0 30px;}
+.banner-text .banner-search .btn-search{background-color:#1ba590;color: #fff;font-size: 15px;text-transform: capitalize;border-radius: 30px;font-weight: 500;width: 200px;outline: 0;}
+.banner-text .banner-search .btn-search:hover{background-color: #155d6d;}
+
+
+/* about */
+
+h2.head{font-size: 40px;font-weight: 700;font-family: 'Bitter',arial, serif;color: #333;line-height: 43px;margin-bottom: 40px;}
+.about,.about-app{padding: 100px 0 0 0;}
+
+.about .about-desc{background-color: #e9ecef;padding: 40px;border-radius: 5px;margin-bottom: 30px;}
+
+
+/* about-app */
+.about-app .app-about-box{background-color: #f8f8f8;padding: 20px;min-height: 350px;}
+.about-app .app-about-box img{width: 100px;}
+.about-app .app-about-box h4{font-size: 18px;color: #333;line-height: 18px;font-family: 'Bitter',arial, serif; font-weight: 700;margin: 20px 0 15px;}
+.about-app .app-about-box .box-text p{font-size: 14px;color: #666;margin: 0;font-weight: 400;}
+/* footer */
+
+// footer{padding: 40px 0;}
+footer ul{padding: 0;list-style: none;margin: 0;}
+footer ul li{display: inline-block;}
+footer ul li a{padding: 10px;color: #999;font-weight: 500;font-size: 13px;}
+footer ul li a:hover,footer ul li.active a{color:#1BA590;text-decoration: none;}
+footer ul.links{display: inline-block;margin-left: 20px;vertical-align: middle;}
+footer .social-links ul li a{background-color: #eee;color: #444;line-height: 15px;width: 35px;height: 35px;text-align: center;margin-left: 8px;border-radius: 50%;}
+footer .social-links ul li a:hover{background-color: #1BA590;color: #fff;}
+
+footer .main-footer{background:url('/assets/footer-bg.jpg');background-size: cover;padding: 50px 0;}
+footer .main-footer .footer-text{margin: 5px 0;}
+footer .main-footer h4{margin: 0;color: #cdcbcb;}
+
+footer .copy{background-color: #000;}
+footer .copy p{color: #1ba590;font-size: 14px;font-weight: 400;margin: 0;padding: 15px;}
