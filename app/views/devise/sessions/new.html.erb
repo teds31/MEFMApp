@@ -6,6 +6,7 @@
         <div class="login-box">
             <h2 class="head">Log in</h2>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
               <div class="form-group">
                   <%= f.email_field :email, class: "form-control", placeholder: "Enter Email Address" %>
               </div>
