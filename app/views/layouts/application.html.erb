@@ -19,9 +19,9 @@
     <%= render "layouts/top_navigation" %>
     <!-- <p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p> -->
-    <div class="row">
+    <div class="alert-flash">
       <div class="alert-popup">
-        <div class="col-md-12">
+        <div>
           <% flash.each do |key, value| %>
             <div class="alert alert-<%= key == 'error' ? 'danger' : 'success' %> alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
