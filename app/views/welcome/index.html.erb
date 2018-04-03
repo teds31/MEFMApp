@@ -6,14 +6,13 @@
           <img src="assets/MEFMLogo.png" alt="" class="img-responsive">
           <!-- <%= image_tag("MEFMLogo.png", :alt => "ME & FM Logo") %> -->
           <h1>ME & FM <span>Providers</span></h1>
-          <p class="text primary">Finding a medical provider who knows<span>ME & FM is hard</span<p>
-
+          <p class="text primary">Finding a medical provider who knows<span>ME & FM is hard</span></p>
           <div class="banner-search">
             <span>We make it easy</span>
-            <form class = "search">
-              <input type="text" name="search" placeholder="Search By Postal Code">
+            <form class="search">
+              <input type="text" name="search" class="form-control" placeholder="Search By Postal Code">
+              <button class="btn btn-success" type="button"><i class="fa fa-search"></i></button>
             </form>
-            <button type="button" class="btn btn-search btn-lg">Search</button>
           </div>
         </div>
       </div>
@@ -21,12 +20,11 @@
   </div>
 </section>
 
-
-<section class="about">
+<section class="about-bg">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="head text-center">What We Are About</h2>
+        <h2 class="text-center">What We Are About</h2>
         <div class="about-desc">
           <p>In an ideal world we would not need to create a specialised ME and FM database for physicians and other healthcare practitioners.</p>
           <p>In an ideal world, there would be an adequate number of health care professionals who are very knowledgeable about ME and FM; there would be testing and treatments, all covered by MSP.</p>
@@ -38,14 +36,15 @@
 </section>
 
 
-<section class="about-app">
+<section class="aboutapp-bg">
   <div class="container">
     <div class="row">
-      <h2 class="head text-center col-12">What This App Is About</h2>
-
-      <div class="col-12 col-lg-4 text-center">
-        <div class="app-about-box">
-          <img src="/assets/doctorlocator.png"  alt="Doctor Locator" class="img-responsive"/>
+      <h2 class="text-center col-12">What This App Is About</h2>
+      <div class="col-12 col-lg-4">
+        <div class="aboutapp-box text-center">
+          <div class="icon">
+            <img src="/assets/doctorlocator.png" alt="Doctor Locator" class="img-responsive"/>
+          </div>
           <h4>Providers Close To You</h4>
           <div class="box-text">
             <p>Not every practitioner is capable of understanding and treating ME & FM. We help find the closest one to you based on your postal code.</p>
@@ -53,9 +52,11 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4 text-center">
-        <div class="app-about-box">
-          <img src="/assets/review.png" alt="Review" class="img-responsive"/>
+      <div class="col-12 col-lg-4">
+        <div class="aboutapp-box text-center">
+          <div class="icon">
+            <img src="/assets/review.png" alt="Review" class="img-responsive"/>
+          </div>
           <h4>Review Providers</h4>
           <div class="box-text">
             <p>Rate and review. Review the practitioners you do visit, and rate them on a variety of important factors.</p>
@@ -63,9 +64,11 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4 text-center">
-        <div class="app-about-box">
-          <img src="/assets/openheart.png" alt="Open Heart" class="img-responsive"/>
+      <div class="col-12 col-lg-4">
+        <div class="aboutapp-box text-center">
+          <div class="icon">
+            <img src="/assets/openheart.png" alt="Open Heart" class="img-responsive"/>
+          </div>
           <h4>Help Others</h4>
           <div class="box-text">
             <p>With your ratings and reviews, you also help your community.</p>
