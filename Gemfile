@@ -17,7 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails-erd', require: false, group: :development
 gem 'bootstrap', '~> 4.0.0'
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.3.0"
 gem 'omniauth-facebook'
 
 group :development, :test do
