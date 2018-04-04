@@ -1,36 +1,30 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">ME & FM Provider</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Find A Provider</a>
-      </li>
-      <% if !user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-link' %>
-        </li>
-        <li class"nav-item">
-          <%= link_to 'Sign In',  new_user_session_path, :class => 'nav-link'  %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to 'Account', edit_user_registration_path, :class => 'nav-link' %>
-        </li>
-        <li class"nav-item">
-          <%= link_to 'Log Off',  destroy_user_session_path, :class => 'nav-link'  %>
-        </li>
-      <% end %>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.mefm.bc.ca/">ME & FM Society of BC</a>
-      </li>
-    </ul>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <div class="footer-text">
+          <h4 class="float-left">ME & FM Provider</h4>
+          <ul class="links">
+            <li class="active"><a href="#">Find A Provider</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">ME & FM Society of BC</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="social-links float-right">
+          <ul>
+            <li><a href="#" class="fa fa-facebook-f"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-google"></a></li>
+            <li><a href="#" class="fa fa-pinterest-p"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
+
+  <div class="copy"> Copyright © 2018. All Rights Reserved </div>
+</footer>

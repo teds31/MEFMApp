@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Roboto:300,400,500,700,900');
+
+body {font-family: 'Roboto', arial, sans-serif; padding: 0px; margin: 0px;}
+ul, ol {margin: 0px; padding: 0px; list-style: none;}
+h1, h2, h3, h4, h5, h6, p {padding: 0px; margin: 0px; line-height: 1; font-family: 'Roboto', arial, sans-serif;}
+
+h2 {font-size: 40px; font-weight: 400; font-family: 'Bitter',arial, serif; color: #1ba590; line-height: 1; padding: 0; margin: 0 0 60px 0; position: relative;}
+h2:before {content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: -15px; width: 150px; height: 1px; background-color: #1ba590;}
+h2:after {content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: -25px; width: 100px; height: 1px; background-color: #1ba590;}
+
+p {font-size: 16px; margin: 0 0 15px 0; line-height: 24px; color: #666;}
+
+/* header */
+header.navbar {background-color: #fff;}
+header.navbar .search-box {position: relative;}
+header.navbar .search-box .form-control {background: none; border: solid 1px #ccc; border-radius: 20px; box-shadow: 0 0 0 transparent; height: 40px; padding: 10px 20px; margin: 0px !important; display: block;}
+header.navbar .search-box .btn {background: #1ba590; border: 0px; border-radius: 50%; box-shadow: 0 0 0 transparent; height: 40px; padding:0; width: 40px; color: #fff; position: absolute; right: 0px; top: 0px;}
+
+header.navbar .navbar-nav li.nav-item a.nav-link {text-transform: uppercase; padding-left:1.5rem; padding-right: 1.5rem; position: relative;}
+header.navbar .navbar-nav li.nav-item.active a.nav-link, header.navbar .navbar-nav li.nav-item a.nav-link:hover {color: #1ba590;}
+header.navbar .navbar-nav li.nav-item.active a.nav-link:before {position: absolute; content: ''; left: 50%; bottom: 5px; width: 5px; height: 5px; background-color: #1ba590; transform: translateX(-50%); border-radius: 50%;}
+
+
+/* banner */
+.banner {background:url('/assets/banner-bg.jpg'); background-size: cover; background-position: center;}
+.banner-text {padding: 100px 0;}
+.banner-text img{width: 160px;}
+.banner-text h1{font-size: 49px;font-weight: 700;font-family: 'Bitter',arial, serif;color: #fff;line-height: 40px;margin: 0;}
+.banner-text h1 span{color: #1BA590;}
+.banner-text p{font-size: 18px;font-weight: 500;color: #fff;margin:25px 0 50px 0;}
+
+.banner-text .banner-search {display: block;}
+.banner-text .banner-search span{color: #fff; font-size: 30px; font-weight: 500; margin: 0 0 20px 0px; display: block;}
+.banner-text .banner-search .search {width: 50%; margin: auto; position: relative;}
+.banner-text .banner-search .search .form-control {background: #fff; border: solid 1px #ccc; border-radius: 30px; box-shadow: 0 0 0 transparent; height: 60px; padding: 10px 20px; margin: 0px !important; display: block;}
+.banner-text .banner-search .search .btn {background: #1ba590; border: 0px; border-radius: 50%; box-shadow: 0 0 0 transparent; height: 40px; padding:0; width: 40px; color: #fff; position: absolute; right: 10px; top: 10px;}
+
+
+/* about */
+
+.about-bg {display: block; padding: 50px 0; background-color: #f1f1f1;}
+.about .about-desc {padding: 40px;}
+
+
+/* about-app */
+
+.aboutapp-bg {display: block; padding: 50px 0;}
+.aboutapp-bg .aboutapp-box {background: #1ba590; padding: 0px 40px 40px 40px; margin-top: 100px; box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1); min-height: 430px;}
+.aboutapp-bg .aboutapp-box .icon {display: inline-block; width: 200px; height: 200px; background-color: #fff; border-radius: 50%; position: relative; margin: -100px 0 30px 0; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);}
+.aboutapp-bg .aboutapp-box .icon  img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 50%;}
+.aboutapp-bg .aboutapp-box h4 {display: block; margin: 0px 0 20px 0; font-size: 24px; font-weight: 400; color: #fff;}
+.aboutapp-bg .aboutapp-box p {display: block; margin: 10px 0px; font-size: 16px; font-weight: 400; color: #eee;}
+
+
+/* Login */
+
+.login{padding: 80px 0;}
+.login .login-box{background-color: #f8f9fa;padding: 35px;border:1px solid #ddd;}
+.login .login-box h2.head.reg{margin-bottom: 20px;}
+.login .login-box p{font-size: 20px;color: #8c8b8b;font-weight: 400;margin-bottom: 25px;}
+.login .login-box .form-group .form-control{padding: 20px 15px;color: #666;font-size: 18px;height: auto;}
+.login .login-box .form-group .form-control:focus{box-shadow: none;}
+.login .login-box .form-check{text-align: left;}
+.login .login-box .btnSubmit{width: 70%;text-transform: uppercase;font-size: 16px;font-weight: 500;padding: 15px;border-radius: 40px;margin: 30px 0 15px;}
+.login .login-box a{font-size: 15px;color: #1ba590;font-weight: 500;}
+.login .login-box span{color: #8c8b8b;}
+.login .login-box span.min-pass{text-align: left;display: inherit;font-style: italic;}
+.alert-flash{margin-top: 20px;width: 25%;position: absolute;right: 0;}
+
+/* Forget Password */
+
+
+/* footer */
+
+footer {background-color: #222; display: block; margin-top: 30px; padding-top: 20px;}
+footer h4 {margin: 0;color: #cdcbcb;}
+footer ul{ padding: 0;list-style: none;margin: 0;}
+footer ul li{display: inline-block;}
+footer ul li a{padding: 10px;color: #999;font-weight: 500;font-size: 13px;}
+footer ul li a:hover,footer ul li.active a{color:#1BA590;text-decoration: none;}
+footer ul.links{display: inline-block;margin-left: 20px;vertical-align: middle;}
+footer .social-links ul li a{background-color: #eee;color: #444;line-height: 15px;width: 35px;height: 35px;text-align: center;margin-left: 8px;border-radius: 50%;}
+footer .social-links ul li a:hover{background-color: #1BA590;color: #fff;}
+footer .copy {background-color: #111; line-height: 40px; font-size: 11px; color: #eee; text-align: center; display: block; margin-top: 20px;}

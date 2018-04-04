@@ -1,4 +1,49 @@
-<h2>Sign up</h2>
+
+<section class="login">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <div class="login-box">
+            <h2 class="head reg">Register</h2>
+            <p>Create your account. It's free and only takes a minute.</p>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <% if resource.errors.present? %>
+                <div class="alert alert-danger" role="alert">
+                  <%= resource.errors.full_messages[0] %>
+                </div>
+              <% end %>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <%= f.email_field :email, class: "form-control", placeholder: "Email Address" %>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                  <% if @minimum_password_length %>
+                  <span class="min-pass">(<%= @minimum_password_length %> characters minimum)</span>
+                  <% end %>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password"%>
+                </div>
+                <%= f.submit "Sign up", class: "btn btnSubmit" %>
+              <% end %>
+            <span>Already have an account? <a href="#">Sign In</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -36,4 +81,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->
