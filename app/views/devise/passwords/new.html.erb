@@ -5,21 +5,22 @@
     <div class="row justify-content-center">
       <div class="col-lg-7 text-center">
         <div class="login-box">
-            <h2 class="head">Forgot your password?</h2>
-
-            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <h2 class="title">Forget your password?</h2>
+            <div class="login-form">
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <% if resource.errors.present? %>
-                <div class="alert alert-danger" role="alert">
-                  <%= resource.errors.full_messages[0] %>
-                </div>
+              <div class="alert alert-danger" role="alert">
+                <%= resource.errors.full_messages[0] %>
+              </div>
               <% end %>
               <div class="form-group">
                 <%= f.email_field :email, class: "form-control" ,placeholder: "Enter Email Address" %>
               </div>
 
               <%= f.submit "Get New Password" , class: "btn btnSubmit" %>
-            <% end %>
-            <span>Back to <%= link_to "Log in", new_session_path(resource_name) %> </span>
+              <% end %>
+              <span>Back to <%= link_to "Log in", new_session_path(resource_name) %> </span>
+            </div>
         </div>
       </div>
     </div>
