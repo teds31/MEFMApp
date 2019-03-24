@@ -26,7 +26,7 @@ header.navbar .navbar-nav li.nav-item.active a.nav-link:before {position: absolu
 
 
 /* banner */
-.banner {background:image_url('/assets/peoplesunsetbackground.png'); background-size: cover; background-position: center;}
+.banner {background-image:url('/assets/peoplesunsetbackground.png'); background-size: cover; background-position: center;}
 .banner-text {padding: 100px 0;}
 .banner-text img{width: 160px;}
 .banner-text h1{font-size: 49px;font-weight: 700;font-family: 'Bitter',arial, serif;color: #fff;line-height: 40px;margin: 0;}
