@@ -6046,3 +6046,14 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-03-24 11:50:02 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (43.2ms)
+  Rendered layouts/_top_navigation.html.erb (0.9ms)
+  Rendered layouts/_bottom_navigation.html.erb (0.4ms)
+Completed 200 OK in 1729ms (Views: 1673.8ms | ActiveRecord: 18.0ms)
+
+
